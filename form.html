@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form action="check.php" method="GET">
+        <fieldset>
+            <legend>Personl Info</legend>
+            <input type="text" name="name" placeholder="Full Name" minlength="10" maxlength="50"> <br>
+            <input type="email" name="user_email" placeholder="User Email"> <br>
+            <input type="password" minlength="8" name="User_Password" id="Enter Password" maxlength="30"> 
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <br>
+    <h2>Registration</h2>
+    <form action="register.php" method="GET">
+        <input type="hidden" name="user_id" value="45">
+        <textarea name="address" placeholder="Enter Address" id="" cols="30" rows="10"></textarea> <br>
+        <input type="radio" name="gender" value="male" id="male" checked="checked"> <label for="male">male</label>
+        <input type="radio" name="gender" value="female" id="female"> <label for="female">female</label><br>
+        Interests: <br>
+        <input type="checkbox" name="php" id="php" value="php"> <label for="php">PHP</label> <br>
+        <input type="checkbox" name="js" id="js" value="js"> <label for="js">JS</label><br>
+        <input type="checkbox" name="css" id="css" value="css" checked="checked"> <label for="css">CSS</label><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
