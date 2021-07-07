@@ -10,7 +10,7 @@
     <form action="check.php" method="GET">
         <fieldset>
             <legend>Personl Info</legend>
-            <input type="text" name="name" placeholder="Full Name" minlength="10" maxlength="50"> <br>
+            <input type="text" name="name" placeholder="Full Name" minlength="10" maxlength="50" size="12"> <br>
             <input type="email" name="user_email" placeholder="User Email"> <br>
             <input type="password" minlength="8" name="User_Password" id="Enter Password" maxlength="30"> 
             <input type="submit">
@@ -19,17 +19,34 @@
     <br>
     <br>
     <h2>Registration</h2>
-    <form action="register.php" method="GET">
+    <form action="register.php" method="GET" enctype="multipart/form-data">
         <input type="hidden" name="user_id" value="45">
-        <textarea name="address" placeholder="Enter Address" id="" cols="30" rows="10"></textarea> <br>
+        <input type="text" name="user_name" value="Mr amt" readonly="readonly"> <br>
+        <textarea name="address" placeholder="Enter Address" id="" cols="30" rows="10" required="required"></textarea> <br>
         <input type="radio" name="gender" value="male" id="male" checked="checked"> <label for="male">male</label>
         <input type="radio" name="gender" value="female" id="female"> <label for="female">female</label><br>
         Interests: <br>
-        <input type="checkbox" name="php" id="php" value="php"> <label for="php">PHP</label> <br>
-        <input type="checkbox" name="js" id="js" value="js"> <label for="js">JS</label><br>
+        <input type="checkbox" name="php" id="php" value="php"> <label for="php">PHP</label>
+        <input type="checkbox" name="js" id="js" value="js"> <label for="js">JS</label>
         <input type="checkbox" name="css" id="css" value="css" checked="checked"> <label for="css">CSS</label><br>
-
+        Education <br>
+        <select name="education" id="" multiple="multiple">
+            <option value="1">Diploma</option>
+            <option value="2">Bechalor </option>
+            <option value="3" selected="selected">Master</option>
+        </select><br><br>
+        <input type="date" name="dob"> <br><br>
+        <input type="file" name="photo"> <br><br>
+        <input type="number" name="Age" placeholder="Your Age" min="18" max="99"> <br><br>
+        <input type="number" name="height" placeholder="Your Height in Inches" step="0.01" min="4.8" max="9.9"> <br> <br>
+        <input type="button" value="click me"><br>
+        <button>Click Me</button> <br><br>
         <input type="submit" value="Register">
-    </form>
+        <input type="reset" name="clear">
+    </form><br><br>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TerpfLwFYOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br><br>
+    
 </body>
 </html>
