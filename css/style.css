@@ -1,0 +1,10 @@
+h3 {
+    color: brown;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.small {
+    color: fuchsia;
+    text-transform: capitalize;
+}
