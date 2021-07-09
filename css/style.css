@@ -8,3 +8,104 @@ h3 {
     color: fuchsia;
     text-transform: capitalize;
 }
+
+/* *{
+    margin: 0px;
+    padding: 0px;
+    color: seagreen; 
+} */
+
+.desc a{
+    color: red;
+}
+
+.child > a {
+    color: yellow;
+}
+
+
+
+
+
+a:link {
+    color: red;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: grey;
+}
+
+a:visited {
+    color: skyblue;
+}
+
+:target {
+    color: blue;
+    border: 3px solid red;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+}
+
+input[type="text"],input[type="number"]{
+    width: 100%;
+    border: 2px solid yellow;
+    background-color:gray;
+    outline: none;
+    height: 40px;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 2px solid #555;
+}
+
+h1 {
+    text-align: center;
+}
+
+div#dob_select {
+    width: 100%;
+    background-color: #EEE;
+    border-radius: 4px;
+    outline:none;
+}
+
+div#dob_select select {
+width: 32%;
+padding: 5px 50px;
+}
+
+input[type="radio"]:checked+label {
+    color: yellow;
+    font-weight: bold;
+}
+
+textarea#address {
+width: 100%;
+height: 100px;
+border: 2px solid #ccc;
+border-radius: 10px;
+outline: none;
+}
+
+
+
+input[type="checkbox"]:enabled+label {
+    color: blue;
+    font-style: italic;
+}
+
+input[type="checkbox"]:checked+label {
+    color: yellow;
+font-style: normal;
+}
+
+input[type="checkbox"]:disabled+label {
+    color: rgb(167, 25, 56);
+font-style: normal;
+}
