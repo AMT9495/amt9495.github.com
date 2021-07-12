@@ -167,10 +167,12 @@ p:empty{
 
 .solid{
 	border-style: dashed ;
+    border-radius: 1cm;
 }
 
 .mix{
 	border-style: groove dotted solid dashed;
 				/*top    right  bottom  left*/
     border-color: blue red yellow green;
+    border-radius: 1ch;
 }
