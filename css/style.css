@@ -176,3 +176,170 @@ p:empty{
     border-color: blue red yellow green;
     border-radius: 1ch;
 }
+
+p.marginone{
+	border: 1px solid black;
+	margin: 15px;
+	/*All Four*/
+}
+
+p.margintwo{
+	border: 1px solid black;
+	margin: 10px 30px;
+	/*top/buttom     &    left/right*/
+}
+
+p.marginthree{
+	border: 1px solid black;
+	margin: 10px 5px 15px;
+	/*top   &  left/right   & buttom*/
+}
+
+p.marginfour{
+	border: 1px solid black;
+	margin: 10px 15px 20px 5px;
+	/* Top / Right / Buttom / Left*/
+	/*margin-top: 10px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	margin-left: 5px;*/
+}
+
+/*padding*/
+
+p.paddingone{
+	border: 1px solid rgb(216, 32, 32);
+	padding: 15px;
+	/*All four*/
+}
+
+p.paddingtwo{
+	border: 1px solid rgb(102, 22, 232);
+	padding: 10px 30px;
+}
+p.paddingthree{
+	border: 1px solid rgb(120, 14, 21);
+	padding: 10px 5px 15px;
+}
+p.paddingfour{
+	border: 1px solid black;
+	padding: 10px 15px 20px 5px;
+}
+
+a.google,a.facebook{
+	border: 1px solid black;
+}
+
+p.block{
+	border: 2px solid black;
+	width: 400px;
+}
+a.inline_block{
+	border: 2px solid black;
+	display: inline-block;
+	width: 500px;
+}
+
+div.float_left img{
+    width: 20%;
+    float: left;
+}
+
+div.clean {
+    clear: both;
+}
+
+div.float_right img{
+    width: 20%;
+    float: right;
+}
+
+.gridOne,.gridTwo,.gridThree,.gridFour,.gridFive,.gridSix{
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+
+.gridOne div ,.gridTwo div,.gridThree div,.gridFour div ,.gridFive div,.gridSix div{
+	border: 1px solid #fff;
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+}
+
+.gridTwo{
+	grid-column-gap: 50px;
+	/*column spacing*/
+}
+.gridThree{
+	grid-row-gap: 50px;
+	/*row spacing*/
+}
+
+.gridFour{
+	grid-gap: 40px;
+	/*row and column spaing*/
+}
+
+.gridFive .one{
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+
+.gridSix .two{
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+
+.relative_paraent{
+	width: 1000px;
+	height: 500px;
+	border: 1px solid black;
+}
+.relative{
+	position: relative;
+	top: 50px;
+	left: 200px;
+	width: 300px;
+	height: 100px;
+	border: 1px solid black;
+}
+
+.absolute_parent{
+	position: relative;
+	width: 1000px;
+	height: 500px;
+	border: 1px solid black;
+}
+
+.absolute{
+	position: absolute;
+	top: 50px;
+	left: 400px;
+	border:1px solid yellow;
+	width: 400px;
+	height: 400px;
+}
+
+.fixed{
+	position: fixed;
+	top: 30px;
+	left: 1000px;
+}
+
+/*font*/
+/*online font*/
+.onlinefont{
+	font-family: 'Dancing Script', cursive;
+}
+
+/*offline font*/
+@font-face{
+	src:url(./hello_pirates/Hello\ Pirates\ -\ Personal\ Use.otf);
+	font-family: hello-pirate;
+}
+.offlinefont{
+	font-family: hello-pirate;
+}
