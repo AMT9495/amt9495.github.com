@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Great_Vipes;
+    src: url(Great_Vibes/GreatVibes-Regular.ttf);
+}
+
+@font-face {
+    font-family: para;
+    src: url(Prata/Prata-Regular.ttf);
+}
+
+.navBackground{
+    background-color: #16191c;
+}
+
+
+.logo{
+   width: 180px;
+   height: 140px;
+   margin-left: 30px;
+   display: block;
+}
+
+.brandname{
+    color: white;
+    margin-left: 70px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: great_vibes;
+}
+
+.Top{
+    display: inline-block;
+}
+
+.navBackground ul{
+    float: right;
+    
+}
+
+.navBackground ul li{
+    display: inline-block;
+    margin-top: 10px;
+    padding-top:20px;
+    padding-right: 60px;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.navBackground ul li:hover{
+    color: yellow;
+    transform: translate(10px,-5px);
+    transition-duration: 1s;
+}
+
+.background {
+    background-image: url(/images/bg.jpeg);
+    height: 1000px;
+    width: 100%;
+}
+
+.beerbar{
+    color: gold;
+    position: absolute;
+    left: 230px;
+    top: 300px;
+    font-size: 40px;
+    font-family: Great_Vipes;
+}
+
+.button{
+    background-color: black;
+    color: gold;
+    padding: 8px;
+    border-radius: 10px;
+    margin-left: 60px;
+}
+
+/*body*/
+
+.grid_body{
+    display: grid;
+    grid-template-columns: 550px auto auto;
+    background-color: black;
+}
+
+.grid_body div {
+    border: 4px solid yellow;
+    color: white;
+    background-color: black;
+}
+
+.grid_body .rowplus {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 50px 50px 0px 90px;
+    text-align: center;
+
+}
+
+.grid_body .rowplus h1,h3,.show_img .show_text h2,.one .two h2,{
+    color: gold;
+    font-family: para;
+
+}
+
+.button1{
+    color:black;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: gold;
+    margin: 5px;
+}
+
+.other {
+    text-align: center;
+    padding:50px 50px 5px 50px;
+}
+
+.other h3,.rowplus h3{
+    color: gold;
+}
+.show_img img{
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 50px;
+    margin-left: 48px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.show_text{
+    position: relative;
+    top: 80px;
+    left: 80px;
+    width: 85%;
+  
+}
+
+.clean {
+    clear:both;
+}
+
+.one {
+    background-color: black;
+}
+.two{
+    color: white;
+    position: relative;
+    width: 29%;
+    float: left;
+    top: 40px;
+    left: 50px;
+  
+}
+
+.p1{
+    width: 460px;
+    padding: 30px;
+    padding-left: 300px;
+    
+}
+
+
+.left{
+    position: relative;
+    width: 30%;
+    display: inline-block;
+    padding: 50px 30px 20px 60px;
+    margin-left: 100px;
+    margin-top: 5px;
+   
+}
+
+.right {
+    display: inline-block;
+    width: 30%;
+    padding: 50px 80px 20px 60px;
+    margin-left: 30px;
+    margin-top: 5px;
+
+}
+    
+.left h2,.right h2{
+    color: gold;
+    font-family: para;
+}
+
+
+/*footer*/
+.footer{
+	background-color: black;
+	height: 90px;
+	margin-top: 80px;
+}
+
+footer.footer .footer_design{
+	color: white;
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: 90px;
+}
+footer.footer .footer_design b{
+	color: gold;
+}
+
+footer.footer a{
+		/*display: inline-block;*/
+        float: right;
+        color: gold;
+        margin-right: 50px;
+        margin-top: 35px;
+}
+
+/* end main */
+
+/* start shop */
+
+.bg2 {
+    margin:auto;
+    width: 90%;
+    background-image: url(images/bg2.jpeg);
+    height: 540px;
+}
+
+.bg3{
+    margin:auto;
+    width: 90%;
+    background-image: url(images/bg3.jpeg);
+    background: image width 100%;
+    height: 540px;
+}
+.buy{
+    font-family: para;
+    position: relative;
+    color: white;
+    width: 25%;
+    top: 220px;
+    left: 100px;
+    font-size: large;
+}
+
+.bg3 .buy {
+    font-family: para;
+    position: relative;
+    color: gold;
+    width: 25%;
+    top: 100px;
+    left: 30px;
+    font-size: large;
+}
+
+
+.buy button{
+    border: 2px solid #fff;
+    color: white;
+    background-color: transparent;
+    padding: 13px;
+}
+
+.choice ul {
+    text-align: center;
+}
+
+.choice ul a{
+    font-family: para;
+}
+
+.choice ul a:hover{
+    color: gold;
+}
+
+.choice ul li{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 20px 10px 20px 10px;
+    font-size: 25px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    
+    grid-template-columns: auto auto auto auto ;
+}
+
+.grid div  {
+    border: 2px solid black;
+    width: 350px;
+}
+
+.grid div img{
+    width: 60%;
+}
+.grid div .row {
+    
+    padding:50px 50px 5px 50px;
+    margin: 30px;
+}
+
+.grid div h4{
+    text-align: center;
+    padding: 10px;
+    color: gold;
+    font-size: large;
+    font-family: para;
+}
+
+.grid div h3{
+    text-align: center;
+    padding: 10px;
+}
+
+
+.bg5 {
+    margin: auto;
+    background-image: url(images/bg5.jpeg);
+    width: 100%;
+    height: 1100px;
+
+}
+
+.about {
+    position: relative;
+    width: 60%;
+    top: 120px;
+    margin: auto;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    
+}
+
+.text {
+    margin: 100px 0px;
+    
+}
+
+.first_text{
+    width: 65%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.kind h1{
+    text-align: center;
+    color: gold;
+    font-family: Great_Vipes;
+    margin: 40px 0px;
+}
+
+.kind .photo{
+    margin-left: 5%;
+    width: 90%;
+}
+
+.text1{
+    margin: 30px 0px;
+    
+}
+
+.second_text{
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: xx-large;
+    text-align: center;
+}
