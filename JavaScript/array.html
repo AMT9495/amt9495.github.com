@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>JS Array</h1>
+    <script>
+        var name1='Mg Mg';
+        var name2='Aung Aung';
+        var name3='Ma Ma';
+        document.write(name1,name2,name3);
+        
+        var nameArray=['Mg Mg','Aung Aung','Ma Ma',20,true, 5,false];
+
+        document.write(nameArray);
+        console.log(nameArray);
+        console.log(nameArray[2]);
+        console.log(nameArray.join("/"));
+        nameArray.push('Ko Ko');
+        console.log(nameArray);
+        console.log(nameArray.length);
+        console.log(nameArray.pop());
+        console.log(nameArray);
+        console.log(nameArray.pop());
+        console.log(nameArray);
+        console.log(nameArray.shift());
+        console.log(nameArray);
+        console.log(nameArray.splice(2,3));
+        console.log(nameArray);
+
+        var num1='9';
+        var num2= 9;
+
+        console.log(num1+num2);
+        console.log(parseInt(num1)+num2);
+
+        console.log(nameArray.indexOf('Ma Ma'));
+        console.log(nameArray.indexOf('Ma Maa'));
+
+        
+
+    </script>
+
+
+
+</body>
+</html>

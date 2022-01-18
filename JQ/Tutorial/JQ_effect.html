@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Effect</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+
+            $('#btn').on('click',function(){
+                $('p').hide('fast');
+            });
+            
+            $('#btn1').on('click',function(){
+                $('p').show('slow');
+            });
+
+            $('#toggle').on('click',function(){
+                $('p').toggle();
+            });
+
+            $('#fadeIn').on('click',function(){
+                $('p').fadeIn();
+            });
+
+            $('#fadeOut').on('click',function(){
+                $('p').fadeOut();
+            });
+
+            $('#fadeToggle').on('click',function(){
+                $('p').fadeToggle(1000);
+            });
+
+            $('#slidedown').on('click',function(){
+                $('p').slideDown();
+            });
+
+            $('#slidup').on('click',function(){
+                $('p').slideUp();
+            });
+
+            $('#slideToggle').on('click',function(){
+                $('p').slideToggle();
+            });
+
+            $('#animate').on("click",function(){
+                $('div').animate({
+                    left: '150px',
+                    width: '+=150px',
+                    height: '+=150px'
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae impedit labore quo neque dicta ad maxime vero doloremque quia rem eligendi eum a sequi sed tempore, nulla quod! Ipsam, reprehenderit.</p>
+    <div style="width: 100px;height: 100px;background-color: black;position: relative;"></div>
+    <button id="btn">Hide Btn</button>
+    <button id="btn1">Show Btn</button>
+    <button id="toggle">Toggle Btn</button>
+    <button id="fadeIn">FadeIn Btn</button>
+    <button id="fadeOut">FadeOut Btn</button>
+    <button id="fadeToggle">FadeToggle</button>
+    <button id="slidedown">SlideDown</button>
+    <button id="slidup">SlidUp</button>
+    <button id="slideToggle">SlideToggle</button>
+    <button id="animate">Animate</button>
+</body>
+</html>

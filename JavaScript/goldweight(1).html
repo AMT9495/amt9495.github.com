@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show() {
+            
+        // 1. Accept : gram weight  and  1 kyat thar price
+            var gram= document.querySelector("#gram").value;
+            var gprice= document.querySelector("#gprice").value;
+            console.log(gram,gprice);
+        // 2. Change to Kyat Pae Yaway weight / calculate price
+        // 1kyat thar = 16.6 gram
+        // 1kyat thar = 16 pae 
+        // 1 pae =  8 yway
+        // gram to kyat thar formula => 
+         //  kyatthar => gram/16.6 => int => kyat
+          // 20g=1kyat 3 pae 2 yway
+         // kyat_thar=gram/16.6 => integer
+         // pae = float( kyat_thar ) *16 => int => pae 
+         // yway = float (pae) * 8 
+         // k - p - y 
+
+         var kyat_calculation=gram/16.6;
+         var kyat=parseInt(kyat_calculation);
+         var pae_calculation=(kyat_calculation-kyat)*16;
+         var pae=parseInt(pae_calculation);
+         var yway_calculation=(pae_calculation-pae)*8;
+         var yway=parseInt(yway_calculation);
+       //  console.log(kyat,pae,yway);
+         var kpy=kyat + '-' +pae+'-'+yway;
+         document.querySelector("#kpy").value=kpy;
+
+         // 1 kyat thar = 1500000
+         // 20g = 1-3-2
+         // price=1kyat_thar(kyat+pae/16+yway/128);
+            var gtotal=gprice*(kyat+pae/16+yway/128);
+            document.querySelector("#gtotal").value=gtotal;
+        // 3. Show result in weight and total price
+        }
+    </script>
+
+<style>
+    .main {
+        width: 20%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: gold;
+        padding: 5px;
+        border: 1px solid black;
+    }
+
+    input {
+        width: 80%;
+        background-color:rgb(202, 224, 227);
+    }
+
+
+    button {
+        background-color: red;
+    }
+</style>
+
+</head>
+<body>
+        <div class="main">
+            <h1>Gold</h1>
+    <input type="number" placeholder="Gram" id="gram"><br>
+    <input type="number" placeholder="Gold Price" id="gprice"><br>
+    <button onclick="show()">Calculate</button> <br>
+    <input type="text" placeholder="Kyat-Pae-Yway" id="kpy"><br>
+    <input type="number" placeholder="Gold Price Total" id="gtotal">
+        </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Intro</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let sp = $('.spanTag');
+            console.log(sp);
+        });
+
+        $(function(){
+            let h1 = $('#h1');
+            console.log(h1);
+
+            $('button').click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="h1">Hello JQuery</h1>
+
+    <h2 class="myh2">This is Header2</h2>
+
+    <P id="para">This is paragraph</P>
+
+    <span class="spanTag">This is span</span>
+
+    <button class="btn">Click Me</button>
+
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+        let h1 = $('h1');
+        console.log(h1)
+
+        let h2 = $('.myh2');
+        console.log(h2);
+
+        let p = $('#para');
+        console.log(p);
+
+    </script>
+</body>
+</html>

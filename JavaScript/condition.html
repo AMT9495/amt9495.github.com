@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition</title>
+</head>
+<body>
+    <h1>JS Condition</h1>
+    <script>
+        var num=prompt('Enter a number!');
+        if(num%2==1){
+            alert(num + 'is odd');
+        }
+        else {
+            alert(num+ 'is even')
+        }
+
+        if (num>10){
+            alert(num + " is greathern 10 ");
+        }
+        else if(num<10) {
+            alert(num + " is less than 10");
+            }
+        else{
+            alert('It is 10')
+        }
+
+        var ans=prompt('Enter a number 1 to 6');
+        switch (ans) {
+            case '1':alert('One')
+                break;
+
+            case '2':alert('Two')
+                break;
+
+            case '3':alert('Three')
+                break;
+                
+            case '4':alert('four')
+                break;
+
+            case '5':alert('Five')
+                break;
+                
+            case '6':alert('Six')
+                break;
+
+            default: alert('Out of Range')
+                break;
+        }
+    </script>
+
+</body>
+</html>

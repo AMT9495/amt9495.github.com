@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+</head>
+<body>
+    <h1>Home Loan</h1>
+
+    <label for="">Home Value</label><br>
+    <input type="number" placeholder="Home Value" id="homeValue" value="20000000"><br>
+
+    <label for="">Down Payment</label><br>
+    <input type="number" min="10" placeholder="Down Payment 50% 30% 10%" value="50" id="downPayment"><br>
+
+    <label for="">Credit</label><br>
+    <input type="number" placeholder="Credit" id="credit" value="10000000"><br>
+
+    <label for="">Interest Rate</label><br>
+    <input type="number" placeholder="Interest Rate" id="interestRate" value="13"><br>
+
+    <label for="">Payment Year</label><br>
+    <input type="number" placeholder="Payment Year" id="paymentYear" value="5"><br>
+
+    <label for="">Monthyly Payment</label><br>
+    <input type="number" placeholder="Monthly Payment" id="monthlyPayment"><br>
+    <button id="btnCalculate">Calculate</button>
+    <div>
+        <h1>Loan Payment Plan Table</h1>
+        <div id="loanPaymentTable">
+
+        </div>
+    </div>
+
+    <script>
+        
+        let btnCalculate=document.getElementById("btnCalculate");
+        btnCalculate.addEventListener('click',function(){
+         //   alert('hi');
+
+         let homeValue=parseInt(document.getElementById('homeValue').value) ;
+         let downPayment=parseInt(document.getElementById('downPayment').value);
+         let credit=parseInt(document.getElementById('credit').value);
+         let interestRate=parseInt(document.getElementById('interestRate').value);
+         let paymentYear=parseInt(document.getElementById('paymentYear').value);
+         console.log(homeValue,downPayment,credit,interestRate,paymentYear);
+        });
+
+
+        let homeValue=parseInt(document.getElementById('homeValue'));
+        let downPayment=parseInt(document.getElementById('downPayment'));
+       
+            homeValue.addEventListener('change',function(){
+                document.getElementById("credit").value=calculateCredit(homeValue.value,downPayment.value)
+            });
+
+            downPayment.addEventListener('change',function(){
+                document.getElementById("credit").value=calculateCredit(homeValue.value,downPayment.value)
+            });
+
+
+
+        function calculateCredit(homeValue,downPayment){
+            console.log(homeValue,downPayment);
+            let credit=homeValue-(homeValue*(downPayment/100));
+            return credit;
+           
+
+        }
+
+        function monthlyPayment(intrerestRate,credit,paymentYear){
+
+            return monthlyPayment;
+        }
+        function showTable(credit,paymentYear,monthlyPayment){
+            let totalMonth=paymentYear*12;
+            
+            for (let i = 0; i <=totalMonth; i++) {
+                
+                
+            }
+        }
+    </script>
+</body>
+</html>

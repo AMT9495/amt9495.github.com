@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsdom2</title>
+
+    <style>
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="blue">Hello DOM</h1>
+    <h2 class="blue">DOM is funny</h2>
+    <p><i>This is Paragraph</i></p>
+    <p class="blue">JS DOM Paragraph</p>
+    <p class="blue"></p>
+    <div>
+        <p>First P</p>
+        <p>Second P</p>
+        <p>Third P</p>
+    </div>
+
+
+    <script>
+
+        // selector by tag name
+        let ptag=document.getElementsByTagName("p");
+        console.log(ptag[0].innerHTML);
+
+        let ptags=document.querySelectorAll("p");
+        console.log(ptags[0].innerText);
+
+
+        ptags[2].innerHTML=ptag[0].innerHTML + ptag[1].innerHTML;
+        
+        // selector by class name
+        let blueclass=document.getElementsByClassName("blue");
+        console.log(blueclass[0].innerHTML);
+
+        let blueclass2=document.querySelectorAll(".blue");
+        console.log(blueclass2[1].innerText);
+
+    </script>
+</body>
+</html>

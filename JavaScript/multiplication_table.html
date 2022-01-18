@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mul Table</title>
+</head>
+<body>
+    <div id="mul_table"></div>
+    <script>
+        var html='';
+        var t=prompt('how many table you would like to see?');
+        
+
+        html+=`<table border='1' cellpadding='10'>`;
+        /*    for(i = 1; i <=t ; i++){
+                html+=`<th> ${i} </th>`;
+                }*/
+                html+=`<tr>`;
+            for(a = 1; a<=12 ; a++){
+                
+                    for(b= 1; b<=t; b++){
+                
+                        html+=`<td> ${b}*${a} = ${b*a}</td>`;
+                    }
+                html+=`</tr>`;
+                
+            }
+           
+        html+=`</table>`;
+        console.log(html);
+        document.querySelector('#mul_table').innerHTML=html;
+        
+       
+       
+    </script>
+</body>
+</html>
+
+
+    
+    

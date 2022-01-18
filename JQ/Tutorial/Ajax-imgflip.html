@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            // $.get("https://api.imgflip.com/get_memes",function(response){
+            //     console.log(response)
+            //     let memes = response.data.memes;
+            //     let img = '';
+            //     for(image of memes){
+            //         img += `<img src = "${image.url}" width = "400">`
+            //     }
+    
+            //     $('#images').html(img);
+
+            // });
+            $('#myform').on('submit',function (event) { 
+                let text0 = $('#text0').val();
+                let text1 = $('#text1').val();
+
+                $.post('https://api.imgflip.com/caption_image',{
+                template_id: "181913649",
+                username: "P_Boom",
+                password: 'yuki@1234',
+                text0: text0,
+                text1: text1,
+                },function( response ){
+                    // console.log(response);
+                    let img = `<img src = "${response.data.url}">`;
+                    $('#images').html(img);
+                })
+
+                event.preventDefault();
+             })
+
+            
+        });
+    </script>
+</head>
+<body style="background-color: black;">
+    
+
+    <div class="container" id="images">
+        <form action="#" id="myform">
+            <input type="text" name="text0" id="text0" required>
+            <input type="text" name="text1" id="text1" required>
+            <input type="submit" value="Go">
+        </form>
+    </div>
+</body>
+</html>

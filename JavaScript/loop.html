@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    <div id="my_table">
+
+    </div>
+    <script>
+        // for loop => know exact loop count
+        for(var i=1; i<=10 ; i++ ) {
+            if(i==5){
+                //break; //exit from loop
+                continue; //skip one time
+            }
+            document.write( '<h1> '+ i +' Hello World!</h1>');
+        }
+
+
+        // nested loop
+
+        /*
+                *       *       *
+                *       *       *
+                *       *       *
+        */
+
+        for(var i=1; i<=3 ; i++){ //row
+            for(var j=1; j<=3 ; j++){ // column
+                document.write(' * ');
+            }
+            document.write(' <br> ');
+        }
+
+        //square table
+
+        var html='';
+        var num=1;
+        html+=`<table border='1' cellpadding='10'>`;
+            for(var i=1;i<=10;i++){ //row => tr
+                html+=`<tr>`;
+                    for(var j=1;j<=10;j++){// column => td
+                //    html+=`<td>${i*j}</td>`;
+                        html+=`<td>${num++}</td>`;
+                    }
+                html+=`</tr>`;
+            }
+        html+=`</table>`;
+        console.log(html);
+        document.querySelector('#my_table').innerHTML=html;
+
+        var row=prompt('How many row would like to see');
+        var num=1; // initialized
+        for(var i=1; i<=row ; i++){ //row
+            for(var j=1; j<=i ; j++){ // column
+                document.write(num++ + ' ');
+            }
+            document.write(' <br> ');
+        }
+
+    </script>
+    
+
+
+</body>
+</html>

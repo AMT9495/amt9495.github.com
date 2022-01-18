@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ EVENT</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').on("click",function(){
+                $('#myh1').hide();
+            });
+
+            $('#balance').on("focus",function(){
+                let total = Number($('#total').val());
+                let pay = Number($('#pay').val());
+                $(this).val(pay-total);
+            });
+
+            $('#town').on('change',function(){
+                let myTown = $(this).val();
+                $('#mytown').text(myTown);
+            });
+
+            $('a').on('click',function(event){
+                alert('This side is currently block in your country!');
+                event.preventDefault();
+            })
+
+            $('#myform').on('submit',function(event){
+                let error = false;
+                let username = $('#username').val();
+                if(username.length < 5){
+                    error = true;
+                };
+
+                if(error == true){
+                    event.preventDefault();
+                };
+            });
+        });
+    </script>                
+</head>
+<body>
+    
+        <!-- Click -->
+
+    <h1 id="myh1">Hello JQuery</h1>
+    <button>Click</button>
+
+        <!-- Focus -->
+
+    <form action="">
+        <input type="number" name="total" id="total">
+        <input type="number" name="pay" id="pay">
+        <input type="number" name="balance" id="balance">
+    </form>
+
+    <form action="">
+        <select name="" id="town">
+            <optgroup label="Twon">
+                <option value="ygn">YGN</option>
+                <option value="mdy">MDY</option>
+                <option value="tgi">TGI</option>
+            </optgroup>
+        </select>
+
+        <label for="" id="mytown"></label>
+    </form>
+
+
+    <!-- Current Event Prevent -->
+
+    <a href="https://www.youtube.com/" target="_blink">Go YouTube</a>
+
+    <!-- Submit -->
+
+    <form action="" id="myform">
+        <input type="text" name="username" id="username" placeholder="Enter username"><br>
+        <input type="email" name="email" id="email" placeholder="Enter Your Email"><br>   
+        <input type="password" name="password" id="password" placeholder="Enter Your Password"><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

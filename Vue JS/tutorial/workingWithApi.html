@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with api</title>
+</head>
+<body>
+    
+    <div id="app">
+        <section v-if = 'errored'>
+            <p>sorry</p>
+        </section>
+        <ul v-else>
+            <div v-if = 'loading'>Loading...</div>
+            <li v-else v-for='row in info'>
+                {{row.description}}:
+                <span v-html='row.symbol'></span>{{row.rate_float | currencydecimal}}
+            </li>
+        </ul>
+        <!-- <button v-on:click='getData'>Get Data</button> -->
+    </div>
+
+
+
+
+    <script src="vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                info : '',
+                loading : true,
+                errored : false,
+            },
+            methods : {
+                // getData(){
+                //     console.log('clicked')
+                //     axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                //             .then(response => (this.info = response.data.bpi))
+                // }
+            },
+            mounted(){
+                axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                            .then(response => (this.info = response.data.bpi))
+                            .catch(error => this.errored = true)
+                            .finally( _ => this.loading = false)
+            },
+            filters : {
+                currencydecimal(value){
+                    return value.toFixed(2)
+                }
+            }
+        })
+        Vue.config.devtools = true
+    </script>
+</body>
+</html>

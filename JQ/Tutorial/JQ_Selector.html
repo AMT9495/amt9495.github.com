@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ SELECTOR</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $ (function(){
+            let myP = $('p');
+            console.log(myP);
+
+            let h1 = $('h1.intro');
+            console.log(h1);
+
+            let li = $('ul li:first');
+            console.log(li);
+
+            let name = $("input[name='first_name']");
+            console.log(name);
+
+            let people = $("#contents ul.people li");
+            console.log(people);
+
+            let btn = $(':button');
+            console.log(btn);
+
+            let student = $('tr:even');
+            console.log(student);
+
+            let rollNo = $('#myTable th.special');
+            console.log(rollNo);
+
+            if($('button')){
+                console.log('true');
+            }
+
+            if($('button').length){
+                console.log('have');
+            }
+
+            console.log($('div.foo').has('p'));
+
+            let myli = $('ul li').filter('.current');
+            console.log(myli);
+
+            let sayHiJp = $('ul li').eq(2);
+            console.log(sayHiJp);
+
+            $('button.btn1').on("click",function(){
+                $(this).hide();
+            });
+
+            $('#mydiv').html('<h1>Hello My H1</h1>');
+
+            $('button.btn2').on('click',function(){
+                $('p.para2').hide(2000,function(){
+                    alert("Hide Para Element!");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Testing P</p>
+
+    <h1 class="intro">Hello World</h1>
+
+    <ul>
+        <li>Hi</li>
+        <li class="current">Hello</li>
+        <li>Moshi Moshi</li>
+    </ul>
+
+    <p class="intro">Testing P</p>
+
+    <input type="text" name="first_name" placeholder="Enter Your Name">
+
+    
+    <input type="button" value="Click Me">
+
+    <section id="#contents">
+        <ul>
+            <li>accer</li>
+            <li>macbook</li>
+        </ul>
+    
+        <ul class="people">
+            <li>mg mg</li>
+            <li>aung aung</li>
+        </ul>
+    </section>
+
+    <table style="border: 1px solid black;" id="myTable">
+        <thead>
+            <tr>
+                <th class="special">Roll Number</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>1</td>
+                <td>Mg Mg</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Su Su</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aung Aung</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Aye Aye</td>
+                <td>25</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="foo">
+        <h1>My h1</h1>
+        <p>My para</p>
+    </div>
+
+    <div class="foo">
+        <h1>My h1</h1>
+    </div>
+
+    <button class="btn1">Please click Me</button>
+
+    <div id="mydiv"></div>
+
+    <p class="para2"> Hide Me! Hide Me! Hide Me! Hide Me! Hide Me! Hide Me! Hide Me! Hide Me! Hide Me!</p>
+    <button class="btn2">Animation Buttton</button>
+
+    
+
+</body>
+</html>

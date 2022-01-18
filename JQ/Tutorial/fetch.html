@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <script>
+        fetch('https://restcountries.com/v2/all')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let countries = '';
+            for(country of data){
+                countries += `<li>${country.name} <img src="${country.flags.svg}" width = "30px"></li>`;
+            };
+            document.body.innerHTML = countries;
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

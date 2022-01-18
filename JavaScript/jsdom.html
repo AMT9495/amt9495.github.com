@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSdom</title>
+</head>
+<body>
+    <img src="1.jpeg" alt="" id="image">
+
+    <script>
+        let myimage=document.getElementById("image");
+        myimage.addEventListener('mouseenter', function () {
+           myimage.style.width="300px"; 
+        })
+
+        myimage.addEventListener('mouseout', function () {
+           myimage.style.width="200px";
+           changeimage();
+        })
+
+        setInterval(changeimage, 1500);
+
+
+        function changeimage(){
+            let imagesrc=myimage.getAttribute("src");
+            
+            if(imagesrc=="1.jpeg"){
+                myimage.setAttribute("src","2.jpeg");
+            }
+            else if (imagesrc=="2.jpeg"){
+                myimage.setAttribute("src","3.jpeg");
+            }
+            else{
+                myimage.setAttribute("src","1.jpeg");
+            }
+
+
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

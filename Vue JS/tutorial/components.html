@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+    <div class="app">
+        <student v-for = 'stud in students' v-bind:stud = 'stud'></student>
+        <teacher></teacher>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script>
+        Vue.component('student',{
+            props: ['stud'],
+            template : `<div class = 'student'>
+                        <h5>{{stud.name}}</h5>
+                        <p>Yangon</p>
+                        </div>`
+        })
+
+        Vue.component('teacher',{
+            props : ['teach'],
+            template : `<div class = 'teacher'>
+                        <h5>Daw Su</h5>
+                        <p>Mandalay</p>
+                        </div>`
+        })
+        new Vue ({
+            el : ('#app'),
+            data : {
+                students : [
+                    {name : 'Aung Aung', gender : 'male'},
+                    {name : 'Mg Mg', gender : 'male'},
+                    {name : 'Su Su', gender : 'female'}
+                ],
+            }
+        })
+        Vue.config.devtools = true
+    </script>
+</body>
+</html>

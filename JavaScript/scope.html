@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        /*
+        // 1. declar at the outside of the function => global scope
+        // 2. declare inside the function =>  function scope 
+        // 3. redecleartion OK! > weakness
+        var greeting="Say Hi";
+        function show(){
+            var hello="Hello "; // function scope
+
+        } 
+        
+        var greeting="Hi Boom";
+        console.log(greeting);
+        console.log(hello); 
+        */
+
+    // 1. let => block { } scope
+    // 2. cannot redeclear
+    //    console.log(greeting1);
+             let greeting1="Say Hi";
+             let age=23;
+             if (age>18){
+                greeting1="Hi Mr.";
+                console.log('Inside Block ',greeting1);
+                let ans="This is Block scope";
+                console.log('Inside Block ans: ',ans);
+             }
+             console.log(greeting1);
+          //   console.log(ans);
+
+            const my_name="Mr Boom";
+         //    my_name="Mr Boom";
+                   
+
+             const student={
+                 name: "Mg Mg",
+                 age: 23 ,
+                 city: "Yangon"
+             };
+
+             console.log(student);
+             student.name="Aung Aung";
+             console.log(student);
+             student.city="Mandalay";
+             student.age="26";
+
+    </script>
+</body>
+</html>

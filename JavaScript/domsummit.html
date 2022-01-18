@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Registration Form</h1>
+        
+        <form action="check.php" method="get" onsubmit="return check()">
+            <input type="text" placeholder="Enter Your Name" id="name" minlength="4" required="required"> <br>
+            <input type="password" placeholder="Enter Password" id="password" minlength="4" required="required"> <br>
+            <label for="" id="error"></label>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword" required="required"><br>
+            <input type="submit" value="Register">
+        </form>
+        <br><br>
+        <a href="https://www.google.com" id="mylink">To Google</a>
+
+        <script>
+
+            let mylink=document.getElementById("mylink");
+            mylink.onclick=change;
+            function change(event){
+                if(mylink.getAttribute("href")!="https://www.youtube.com"){
+
+                event.preventDefault();
+                mylink.innerHTML="Go to Youtube";
+                mylink.setAttribute("href","https://www.youtube.com");
+                }
+            }
+
+
+            function check(){
+                
+                let password=document.getElementById("password").value;
+                let confirmPassword=document.getElementById("confirmPassword").value;
+            //    console.log(password,confirmPassword);
+                if(password!=confirmPassword){
+                    let errorMessage="Password and Confirm Password doses not match!";
+                    let errorLabel=document.getElementById("error");
+                    errorLabel.innerHTML=errorMessage;
+                    errorLabel.style.color="red";
+                    return false;
+                    }
+                    else{
+                        return true;
+                    }
+                }
+        </script>
+</body>
+</html>

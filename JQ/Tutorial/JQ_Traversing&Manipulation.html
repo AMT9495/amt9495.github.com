@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            console.log($("span.subchild").parent());
+            console.log($('span.subchild').parents('div.parent'));
+            console.log($('span.subchild').parents());
+            console.log($('span.subchild').parentsUntil('div.grandparent'));
+            console.log($('span.subchild').closest('div'));
+            console.log($('div.child').closest('div'));
+            console.log($('div.grandparent').children('div'));
+            console.log($('div.grandparent').find('div'));
+            console.log($('div.parent').next());
+            console.log($('div.parent').prev());
+            console.log($('div.parent').nextAll());
+            console.log($('div.parent').nextAll().first());
+            console.log($('div.parent').nextAll().last());
+            console.log($('div.surrogateParent2').prevAll());
+            console.log($('div.surrogateParent2').prevAll().first());
+            console.log($('div.surrogateParent2').prevAll().last());
+            console.log($('div.parent').siblings());
+            console.log($('div.surrogateParent1').siblings());
+
+            $('button.btn').on('click',function(){
+                $('p.para').css({'color':'lightgreen','font-size':'40px'}).slideUp(2000);
+            });
+
+            $('button.btn1').on('click',function(){
+                console.log($('#mydiv').html());
+                console.log($('#mydiv').html('<span>This is span</span>'));
+            });
+
+            $('button.btn2').on('click',function(){
+                console.log($('a').attr({
+                'href' : 'https://youtube.com'
+                }));
+                $('a').text('Go to YouTube');
+                $('p.para').prepend('Hello ');
+                $('img').after('This is after function Text');
+                $('#mydiv').empty();
+
+            });
+
+            $('button.btn3').on('click',function(){
+                let img = $('img');
+                console.log(img.attr({
+                'src' : '2.jpeg',
+                }).css({'width' : '350px'}));
+                $('p.para1').append('Hello');
+                $('img').before("This is before function Text");
+                $('#mydiv').remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--Start Travelsing -->
+
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+                <span class="subchild"></span>
+            </div>
+        </div>
+        <div class="surrogateParent1"></div>
+        <div class="surrogateParent2"></div>
+
+        <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In tempore nihil adipisci maiores corrupti aut fuga aperiam incidunt voluptates vel tempora, explicabo voluptatum aliquam sed animi voluptate, eius culpa optio.</p>
+        <button class="btn">Click Me</button>
+    </div>
+    <hr>
+    <!-- End Travelsing -->
+
+    <!--Start Getting and Setting -->
+
+    <div id="mydiv">
+        <p class="para1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam optio, consectetur aspernatur voluptatibus eius laborum. Aliquam, consequuntur dolores, ex nihil ab, dolorum quasi magnam necessitatibus ea officia explicabo culpa illum.</p>
+    </div>
+    <button class="btn1">Click</button>
+    <br><br><hr>
+
+    <a href="https://google.com" target="_blink">Go to Google</a>
+    <button class="btn2">Click</button>
+    <br><br><hr>
+
+    <img src="1.jpeg" alt="This is image" style="width: 300px;" title="Yang Mi" >
+    <button class="btn3">Click to change image</button>
+
+    <!-- End Getting and Setting -->
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ Tab Example</title>
+    <script src="https://kit.fontawesome.com/f59069d1a4.js" crossorigin="anonymous"></script>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.content').first().slideDown();
+            $('ul.linkWapper li a').on('click',function(event){
+                let currentTag = $(this);
+                $('ul.linkWapper li a').removeClass('active');
+                currentTag.addClass('active');
+
+                $('.content').slideUp();
+                currentTagHref = currentTag.attr('href');
+                $(currentTagHref).slideDown();
+                event.preventDefault();
+            })
+            
+
+            //LS
+            $('.atc').on('click',function(){
+                let id = $(this).data('id');
+                let name = $(this).data('name');
+                let price = $(this).data('price');
+
+                let item = {
+                    id : id,
+                    name: name,
+                    price : price,
+                    qty: 1
+                }
+
+                //  console.log(item)
+
+                let cart = localStorage.getItem('cart');
+                let myArr = '';
+                
+
+                if(cart != null){
+                    myArr = JSON.parse(cart);
+                    // console.log(myArr)
+                    // for(i=0;i<myArr.length;i++){
+                    //     if(myArr[i].id == item.id){
+                    //         myArr[i].qty += 1;
+                    //         item.qty = myArr[i].qty;
+                    //         myArr.splice(i,1)
+                    //     }
+                    // };
+                    
+                }else{
+                     myArr = []
+                     
+                }
+                
+
+                //homework
+                let status = 0;
+                for(row of myArr){
+                    if(row.id == id){
+                        row.qty++;
+                        status = 1;
+                    }
+                }
+
+                if(status == 0){
+                    myArr.push(item);
+                }
+                
+                
+
+                //JS Object => JSon String
+                let myArrString = JSON.stringify(myArr);
+                // console.log(myArrString)
+
+                localStorage.setItem('cart',myArrString);
+                getdata();
+            })
+
+            //Get Data From LS
+            function getdata() { 
+                let cart = localStorage.getItem('cart');
+                if(cart != null){
+                    let myArr = JSON.parse(cart);
+                    let row = '';
+                    let total = 0;
+                    let i = 0;
+                    for([index,item] of myArr.entries()){
+                        total += (item.qty*item.price);
+                        row += `
+                                <tr>
+                                    <td>
+                                        <button class = "remove" data-id = "${index}"><i class="far fa-trash-alt fa-2x"></i></button>${++i} 
+                                    </td>
+                                    <td>${item.name}</td>
+                                    <td>${item.price} ks</td>
+                                    <td>
+                                        <input type="number" min='1' value='${item.qty}' data-id='${index}' class='updateqty'>    
+                                    </td>
+                                    <td>${item.qty * item.price} ks</td>
+                                </tr>
+                                `
+                    }
+
+                    row += `
+                            <tr>
+                                <td colspan='4'>Total Amount</td>
+                                <td>${total} ks</td>
+                            </tr>
+                            `
+                    $('tbody').html(row);
+                }else{
+                    $('tbody').html(`<tr><td colspan='5'>Your Cart is empty</td></tr>`);
+                }
+            }
+            getdata();
+
+            //Remove
+            $('tbody').on('click','.remove',function(){
+                let index = $(this).data('id');
+                // console.log(index);
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                //Delete one row
+                myArr.splice(index,1)
+                // JS obj => json string
+                let myArrString = JSON.stringify(myArr);
+                //console.log(myArrString)
+                localStorage.setItem('cart',myArrString);
+                getdata();
+            });
+
+            // increase - decrease Qty
+            $('tbody').on('change','.updateqty',function(){
+                let index = $(this).data('id');
+                //console.log(index)
+                let qty = $(this).val();
+                let cart = localStorage.getItem('cart');
+                let myArr = JSON.parse(cart);
+                myArr[index].qty = qty;
+                //JS Obj => json string
+                let myArrString = JSON.stringify(myArr);
+                //consol.log(myArrString)
+                localStorage.setItem('cart',myArrString);
+                getdata();
+            })
+
+            //checkout
+            $('.checkOut').on('click',function(){
+                console.log('helo')
+                localStorage.removeItem('cart');
+                getdata();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <ul class="linkWapper">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+            <li>
+                <a href="#shop">Shop</a>
+            </li>
+            <li>
+                <a href="#cart">Cart</a>
+            </li>
+        </ul>
+    </div>
+
+        <div class="content" id="home">
+            <h3>Home Section</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium id aut cupiditate minima dolorem sapiente quia necessitatibus saepe, velit consequuntur ea quaerat nostrum quidem quas, tempore culpa ducimus voluptates.</p>
+        </div>
+    
+        <div class="content" id="about">
+            <h3>About Section</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium id aut cupiditate minima dolorem sapiente quia necessitatibus saepe, velit consequuntur ea quaerat nostrum quidem quas, tempore culpa ducimus voluptates.</p>
+        </div>
+    
+        <div class="content" id="contact">
+            <h3>Contact Section</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium id aut cupiditate minima dolorem sapiente quia necessitatibus saepe, velit consequuntur ea quaerat nostrum quidem quas, tempore culpa ducimus voluptates.</p>
+        </div>
+        
+        <div class="content" id="shop">
+            <h1 class="h1">Shop Section</h1>
+            <div class="shop">
+                <div class="item">
+                    <div class = "imageContainer">
+                        <img src="coca.jpeg" class="image" alt="">
+                    </div>
+                    <div class="itemAboutContainer">
+                        <p class="text itemName">Coca Cola</p>
+                        <strong class="text">500 ks</strong>
+                        <button class="atc btn" data-id="1" data-name="Coca Cola" data-price="500">Add to card</button>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class = "imageContainer">
+                        <img src="pepsi.jpeg" class="image" alt="">
+                    </div>
+                    <div class="itemAboutContainer">
+                        <p class="text itemName">Pepsi</p>
+                        <strong class="text">600 ks</strong>
+                        <button class="atc btn" data-id="2" data-name="Pepsi" data-price="600">Add to card</button>
+                    </div>
+                    
+                    
+                </div>
+    
+                <div class="item">
+                    <div class = "imageContainer">
+                        <img src="redbull.jpeg" class="image" alt="">
+                    </div>
+                    <div class="itemAboutContainer">
+                        <p class="text itemName">Red Bull</p>
+                        <strong class="text">800 ks</strong>
+                        <button class="atc btn" data-id="3" data-name="Red Bull" data-price="800">Add to card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="cart">
+            <h1 class="h1">Cart Section</h1>
+            <div class="mycart">
+                <table border="1" cellspacing = "0" cellpadding = "10" width = "80%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+    
+                <button class="checkOut">CheckOut</button>
+            </div>
+        </div>
+</body>
+</html>

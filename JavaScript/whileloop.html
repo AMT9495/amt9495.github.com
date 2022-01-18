@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While_loop</title>
+</head>
+<body>
+    <script>
+        // while loop => check condition
+
+        var a=100;
+        while(a>50){
+        // work on this block of code while condition is true
+            document.write(a + "<br>");
+            a-=3;
+        }
+
+        // show total sum result of 1 to 100
+
+        var num=1;
+        var total=0;
+        while(num<=100){
+            total+=num;
+            num++;
+        }
+        document.write("<br> The sum of 1 to 100 is :"+total);
+
+
+        //factorial => 5! => 5*4*3*2*1
+
+        var ans=prompt('Enter factorial number!');
+        var num=ans;
+        var fact=1;
+        while(ans>1){
+            fact*=ans;
+            ans--;
+        }
+        document.write("<br>"+num+"! is :"+fact);
+
+
+        // do while => do first time without checking condition
+        var num=1;
+        var total=0;
+        do{
+            total+=num;
+            num++;
+        }while(num<=100);
+        document.write("<br>The sum of 1 to 100 is :" +total);
+
+
+        //Even ODD check program
+
+        do{
+            var num=prompt('Enter a number');
+            if(num%2){
+                alert(num+ ' is ODD');
+
+            }
+            else{
+                alert(num+" is Even");
+            }
+           var ans=confirm('Wanna try again?');
+        }while(ans);
+
+
+    </script>
+</body>
+</html>
