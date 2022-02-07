@@ -31,12 +31,12 @@ for(int i=0;i<arrSize;i++){
 if(flag == 0)
 {
 
-    cout<<searchName<< " is not found!";
+    cout<<searchName<< " is not found!\n";
 }
 else{
     cout<<searchName<< "'s info\n";
     cout<<"Rno : "<<rno[foundIndex];
-    cout<<"\nAddress : "<<address[foundIndex];
+    cout<<"\nAddress : "<<address[foundIndex]<<endl;
 }
 return 0;
 }
